@@ -8,7 +8,7 @@ namespace Hospital
     public class Program
     {
         static void Main(string[] args)
-        {
+        {           
             bool booleano = true;
             while (booleano)
             {
@@ -25,6 +25,19 @@ namespace Hospital
                     switch (opcionUsuario)
                     {
                         case 1:
+                            registroEntrada login = new registroEntrada("", "", 0, 0);
+                            Console.WriteLine("Digite el nombre del usuario a registrar: ");
+                            login.nombre = Console.ReadLine();
+                            login.entrada = Convert.ToString(DateTime.Now);
+                            Console.WriteLine("Digite el ID del usuario: ");
+                            login.id = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Digite la edad del usuario: ");
+                            login.edad = Convert.ToByte(Console.ReadLine());
+
+                            login.str();
+                            login.agregarListas(login.nombre, login.entrada, login.id, login.edad);
+                            login.impresion();
+
                             break;
                         case 2:
                             break;
@@ -43,6 +56,12 @@ namespace Hospital
                     Console.WriteLine("Opcion invalida!!!");
                     Console.WriteLine("Porfavor digite una opcion valida ");
                 }
+
+                catch (OverflowException e) 
+                {
+                    Console.WriteLine($"Error: {e}");
+                }
+
             }
         }
     }
