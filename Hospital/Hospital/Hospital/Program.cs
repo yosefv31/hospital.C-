@@ -2,13 +2,14 @@
 using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
+using Hospital.Hospital;
 
 namespace Hospital
 {
     public class Program
     {
         static void Main(string[] args)
-        {           
+        {
             bool booleano = true;
             while (booleano)
             {
@@ -19,10 +20,10 @@ namespace Hospital
                 Console.WriteLine("4) Consultar cédula especifica");
                 Console.WriteLine("5) Salir");
                 try
-                {                    
+                {
                     Console.WriteLine("Digite una opcion: ");
                     byte opcionUsuario = Convert.ToByte(Console.ReadLine());
-                    
+
                     switch (opcionUsuario)
                     {
                         case 1:
@@ -36,20 +37,23 @@ namespace Hospital
                             login.edad = Convert.ToByte(Console.ReadLine());
                             login.str();
                             login.agregarListas(login.nombre, login.entrada, login.id, login.edad);
-                            login.impresion();
                             break;
 
                         case 2:
-                            registroSalida logout = new registroSalida("","",0,0,"",0);
+                            registroSalida logout = new registroSalida("", "", 0, 0, "", 0);
                             Console.WriteLine("Digite la cédula para el registro de salida: ");
                             logout.idValue = Convert.ToInt32(Console.ReadLine());
                             logout.salida = Convert.ToString(DateTime.Now);
                             logout.agregarSalidas(logout.salida);
                             logout.imprimi();
-                            
                             break;
+
                         case 3:
+                            consultaCedula question = new consultaCedula("","",0, 0);
+                            Console.WriteLine("Las cédulas registradas son: ");
+                            question.imprimeCedula();
                             break;
+
                         case 4:
                             break;
                         case 5:
@@ -63,8 +67,7 @@ namespace Hospital
                     Console.WriteLine("Opcion invalida!!!");
                     Console.WriteLine("Porfavor digite una opcion valida ");
                 }
-
-                catch (OverflowException e) 
+                catch (OverflowException e)
                 {
                     Console.WriteLine($"Error: {e}");
                 }

@@ -22,46 +22,27 @@ namespace Hospital
 
 
         //Constructor 
-        public registroEntrada(string nombre, string entrada, int id, byte edad) 
+        public registroEntrada(string nombre, string entrada, int id, byte edad)
         {
             this.nombre = nombre;
             this.entrada = entrada;
             this.id = id;
-            this.edad = edad;        
+            this.edad = edad;
         }
 
         //Métodos externos 
-        public void str() 
+        public void str()
         {
             Console.WriteLine($"El usuario: {nombre} fue registrado con exito!!!");
         }
 
-        public void agregarListas(string elemento1, string elemento2, int elemento3, byte elemento4) 
-        { 
-            nombres.Add (elemento1);
-            entradas.Add (elemento2);
-            Id.Add (elemento3);
-            edades.Add (elemento4);
-        }
-
-        public void impresion()
+        public void agregarListas(string elemento1, string elemento2, int elemento3, byte elemento4)
         {
-            foreach (string x in nombres)
-            {
-                Console.WriteLine(x);
-            }
-            foreach (string x in entradas)
-            { 
-                Console.WriteLine(x); 
-            }
-            foreach (int x in Id)
-            {
-                Console.WriteLine(x);
-            }
-            foreach(byte x in edades)
-            {
-                Console.WriteLine(x);
-            }
-        }
+            nombres.Add(elemento1);
+            entradas.Add(elemento2);
+            Id.Add(elemento3);
+            edades.Add(elemento4);
+            salidas.Add("NA");
+        }       
     }
 }
