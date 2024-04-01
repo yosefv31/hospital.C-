@@ -20,7 +20,6 @@ namespace Hospital
         public static List<byte> edades = new List<byte>();
         public static List<string> salidas = new List<string>();
 
-
         //Constructor 
         public registroEntrada(string nombre, string entrada, int id, byte edad)
         {
@@ -28,7 +27,7 @@ namespace Hospital
             this.entrada = entrada;
             this.id = id;
             this.edad = edad;
-        }
+        } 
 
         //Métodos externos 
         public void str()

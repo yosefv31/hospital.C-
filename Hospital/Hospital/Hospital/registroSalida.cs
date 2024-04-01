@@ -42,7 +42,7 @@ namespace Hospital
                     break;
                 }
                 i++;
-            }
+            } 
         }
         public void imprimi()
         {

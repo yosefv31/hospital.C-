@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hospital.Hospital
+namespace Hospital
 {
     public class consultaCedula : registroEntrada
     {
@@ -28,7 +28,7 @@ namespace Hospital.Hospital
                 else
                 {
                     Console.WriteLine(salidas[i]);
-                }
+                } 
             }
         }
     }

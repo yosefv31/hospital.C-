@@ -55,6 +55,10 @@ namespace Hospital
                             break;
 
                         case 4:
+                            cedulaEspecif question2 = new cedulaEspecif("", "", 0, 0, 0);
+                            Console.WriteLine("Digite el número de cédula a consultar: ");
+                            question2.idValue = Convert.ToInt32(Console.ReadLine());
+                            question2.cedulaEspeci();
                             break;
                         case 5:
                             Console.WriteLine("Gracias por utilizar el programa :)");
